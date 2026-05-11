@@ -11,6 +11,7 @@ import {
   Alert,
   TouchableOpacity,
 } from "react-native";
+
 import { useNavigation } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
 import Navbar from "./Navbar";
@@ -135,7 +136,9 @@ export default function OrderDetailScreen({ route }: any) {
       </View>
       <View style={styles.itemRow}>
         <Text style={styles.labelKey}>Giá:</Text>
-        <Text style={styles.labelValue}>{item.price?.toLocaleString()}₫</Text>
+        <Text style={styles.labelValue}>
+        {Number(item.price).toLocaleString('vi-VN')} đ
+        </Text>
       </View>
       {orderInfo?.status === "Ordered" && (
         <TouchableOpacity
@@ -178,7 +181,7 @@ export default function OrderDetailScreen({ route }: any) {
       ) : (
         <FlatList
           data={details}
-          keyExtractor={(item) => item.id.toString()}
+          keyExtractor={(item, index) => `${item.id}-${index}`}
           renderItem={renderItem}
           contentContainerStyle={styles.listContainer}
         />

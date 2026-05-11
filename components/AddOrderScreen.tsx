@@ -33,7 +33,8 @@ export default function AddOrderScreen({ route, navigation }: any) {
   );
 
   // ========== EFFECTS ==========
-  // Lấy thông tin user và sản phẩm trong giỏ hàng
+  // Lấy thông tin user và sản phẩm trong 
+  
   useEffect(() => {
     const fetchOrderInfo = async () => {
       try {
@@ -201,7 +202,7 @@ export default function AddOrderScreen({ route, navigation }: any) {
           >
             <Text style={styles.optionText}>
               {method === "COD" ? "💰 Thanh toán khi nhận hàng" :
-               "💳 VNPay"}
+               "💳 AgriBank"}
             </Text>
           </TouchableOpacity>
         ))}
@@ -223,7 +224,7 @@ export default function AddOrderScreen({ route, navigation }: any) {
         disabled={loading}
       >
         <Text style={styles.confirmText}>
-          {loading ? "Đang xử lý..." : selectedMethod === "VNPay" ? "Thanh toán VNPay" : "Đặt hàng"}
+          {loading ? "Đang xử lý..." : selectedMethod === "VNPay" ? "Thanh toán AgriBank" : "Đặt hàng"}
         </Text>
       </TouchableOpacity>
     </ScrollView>

@@ -245,7 +245,7 @@ export default function CartScreen({ navigation }: Props) {
           </TouchableOpacity>
         </View>
 
-        <Text style={styles.price}>{item.price.toLocaleString()}đ</Text>
+        <Text style={styles.price}>{Number(item.price || 0).toLocaleString('vi-VN')} đ</Text>
       </View>
       <TouchableOpacity
         onPress={() => handleRemoveCartItem(item.cart_id)}

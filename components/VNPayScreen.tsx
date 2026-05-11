@@ -11,6 +11,7 @@ import {
 } from "react-native";
 import QRCode from "react-native-qrcode-svg";
 import { BASE_URL } from "../ipconfig";
+import { Image } from "react-native";
 
 // ========== CONSTANTS ==========
 const colors = {
@@ -159,14 +160,12 @@ export default function VNPayScreen({ route, navigation }: VNPayScreenProps) {
         contentContainerStyle={styles.contentContainer}
       >
         {/* QR Code */}
-        <View style={styles.qrContainer}>
-          <QRCode
-            value={qrCodeURL}
-            size={250}
-            color={colors.primary}
-            backgroundColor="#fff"
+        <Image
+            source={{
+              uri: `https://img.vietqr.io/image/AGRIBANK-1500203219470-compact.png?amount=${amount}&addInfo=ThanhToan`
+            }}
+            style={{ width: 250, height: 250 }}
           />
-        </View>
 
         {/* Số tiền */}
         <View style={styles.amountBox}>
@@ -176,7 +175,7 @@ export default function VNPayScreen({ route, navigation }: VNPayScreenProps) {
 
         {/* Hình thức thanh toán */}
         <View style={styles.paymentMethodBox}>
-          <Text style={styles.paymentMethodText}>Hình thức: VNPay</Text>
+          <Text style={styles.paymentMethodText}>Hình thức: QR Agribank</Text>
         </View>
 
         {/* Trạng thái quét QR */}
@@ -295,4 +294,5 @@ const styles = StyleSheet.create({
     color: colors.text,
   },
 });
+
 

@@ -230,7 +230,7 @@ export default function ProductDetailScreen({ route, navigation }: any) {
             marginBottom: theme.spacing.lg,
           }}
         >
-          {product.price.toLocaleString()}₫
+          {Number(product.price).toLocaleString('vi-VN')} đ
         </Text>
         <Text
           style={{

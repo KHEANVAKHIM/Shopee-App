@@ -128,7 +128,7 @@ const AddToCartScreen: React.FC<AddToCartScreenProps> = ({
                     <View style={styles.productInfoContainer}>
                       <Text style={styles.productName}>{product.name}</Text>
                       <Text style={styles.productPrice}>
-                        {product.price.toLocaleString()}₫
+                        {Number(product.price || 0).toLocaleString('vi-VN')} đ
                       </Text>
                     </View>
                   </View>

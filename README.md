@@ -7,7 +7,7 @@
 ### Bước 1: Clone và cài đặt
 
 ```bash
-git clone https://github.com/Hoangtran135/Sales-App.git
+git clone https://github.com/KHEANVAKHIM/Shopee-App
 cd Sales-App
 npm install
 ```
